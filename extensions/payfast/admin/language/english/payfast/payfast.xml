@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<definitions>
+    <definition>
+        <key>payfast_name</key>
+        <value><![CDATA[PayFast]]></value>
+    </definition>
+    <definition>
+        <key>payfast_merchant_id</key>
+        <value><![CDATA[ Merchant ID ]]></value>
+    </definition>
+    <definition>
+        <key>payfast_merchant_key</key>
+        <value><![CDATA[Merchant Key]]></value>
+    </definition>
+    <definition>
+        <key>payfast_passphrase</key>
+        <value><![CDATA[Passphrase]]></value>
+    </definition>
+    <definition>
+        <key>payfast_test</key>
+        <value><![CDATA[Sandbox (Test) Mode:<span class="help">Use live or testing (sandbox) gateway server to process transactions?</span>]]></value>
+    </definition>
+    <definition>
+        <key>payfast_test_1</key>
+        <value><![CDATA[ Yes ]]></value>
+    </definition>
+    <definition>
+        <key>payfast_test_0</key>
+        <value><![CDATA[ No ]]></value>
+    </definition>
+    <definition>
+        <key>payfast_order_status_id</key>
+        <value><![CDATA[Order Status:<br /><span class="help">Order status to be set after successful PayFast transaction</span>]]></value>
+    </definition>
+    <definition>
+        <key>payfast_location_id</key>
+        <value><![CDATA[Location:<br /><span class="help">Restrict to allow only selected locations to use this payment method.</span>]]></value>
+    </definition>
+    <definition>
+        <key>payfast_location_id_0</key>
+        <value><![CDATA[All Locations]]></value>
+    </definition>
+    <definition>
+        <key>payfast_autoselect</key>
+        <value><![CDATA[Auto Select:<br /><span class="help">You can set to skip payment selection page if there is only one payment option. This payment method will be selected automatically</span>]]></value>
+    </definition>
+    <definition>
+        <key>payfast_order_status_id_1</key>
+        <value><![CDATA[Pending]]></value>
+    </definition>
+    <definition>
+        <key>payfast_order_status_id_2</key>
+        <value><![CDATA[Processing]]></value>
+    </definition>
+    <definition>
+        <key>payfast_order_status_id_5</key>
+        <value><![CDATA[Complete]]></value>
+    </definition>
+    <definition>
+        <key>text_capture_funds</key>
+        <value><![CDATA[Capture Funds:]]></value>
+    </definition>
+    <definition>
+        <key>text_capture</key>
+        <value><![CDATA[Capture]]></value>
+    </definition>
+    <definition>
+        <key>text_capture_success</key>
+        <value><![CDATA[Success! Funds have been captured successfully.]]></value>
+    </definition>
+    <definition>
+        <key>error_no_payment_method_data</key>
+        <value><![CDATA[Error! There is no payment method data for this order.]]></value>
+    </definition>
+    <definition>
+        <key>error_empty_amount</key>
+        <value><![CDATA[Error! Amount is wrong.]]></value>
+    </definition>
+    <definition>
+        <key>error_no_order_id</key>
+        <value><![CDATA[Error! There is no order ID.]]></value>
+    </definition>
+    <definition>
+        <key>error_amount_exceeded</key>
+        <value><![CDATA[Error! Amount limit exceeded.]]></value>
+    </definition>
+    <definition>
+        <key>error_service_unavailable</key>
+        <value><![CDATA[Service is unavailable at the moment, please try again later.]]></value>
+    </definition>
+    <definition>
+        <key>text_payment_status</key>
+        <value><![CDATA[Payment Status:]]></value>
+    </definition>
+    <definition>
+        <key>text_already_captured</key>
+        <value><![CDATA[Already Captured:]]></value>
+    </definition>
+    <definition>
+        <key>error_wrong_amount</key>
+        <value><![CDATA[Error! Amount must be greater than zero.]]></value>
+    </definition>
+    <definition>
+        <key>text_reason</key>
+        <value><![CDATA[Reason:]]></value>
+    </definition>
+    <definition>
+        <key>text_learn_more</key>
+        <value><![CDATA[Learn more]]></value>
+    </definition>
+</definitions>
