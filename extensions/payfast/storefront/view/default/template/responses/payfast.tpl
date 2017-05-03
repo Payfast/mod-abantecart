@@ -1,3 +1,6 @@
+{*Copyright (c) 2008 PayFast (Pty) Ltd
+You (being anyone who is not PayFast (Pty) Ltd) may download and use this plugin / code in your own website in conjunction with a registered and active PayFast account. If your PayFast account is terminated for any reason, you may not use this plugin / code or part thereof.
+Except as expressly indicated in this licence, you may not use, copy, modify or distribute this plugin / code or part thereof in any way.*}
 <form action="<?php echo str_replace('&', '&amp;', $action); ?>" method="post" id="checkout" <?php echo $target_parent; ?>>
 <input type="hidden" name="merchant_id" value="<?php echo $merchant_id; ?>"/>
 <input type="hidden" name="merchant_key" value="<?php echo $merchant_key; ?>"/>
