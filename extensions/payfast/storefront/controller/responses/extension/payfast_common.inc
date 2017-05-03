@@ -7,8 +7,6 @@
  * Except as expressly indicated in this licence, you may not use, copy, modify or distribute this plugin / code or part thereof in any way.
  * 
  * @author     Jonathan Smit
- * @copyright  2009-2011 PayFast (Pty) Ltd
- * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
  */
 //// Create user agent string
 // User agent constituents (for cURL)
