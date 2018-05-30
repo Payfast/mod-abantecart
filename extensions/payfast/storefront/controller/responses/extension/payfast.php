@@ -64,7 +64,7 @@ class ControllerResponsesExtensionPayFast extends AController
 
         $passPhrase = $this->config->get ('payfast_passphrase' );
 
-        if ( empty( $passPhrase ) || ( $this->config->get( 'payfast_test' ) ) )
+        if ( empty( $passPhrase ) )
         {
             $pfOutput = substr( $pfOutput, 0, -1 );
         }
