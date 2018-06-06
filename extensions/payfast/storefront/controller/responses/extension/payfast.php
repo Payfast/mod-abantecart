@@ -9,6 +9,10 @@ if ( !defined ( 'DIR_CORE' ) )
     header ( 'Location: static_pages/' );
 }
 
+define('SANDBOX_MERCHANT_ID', '10000100');
+define('SANDBOX_MERCHANT_KEY', '46f0cd694581a');
+$defaultSandboxCredentials = false;
+
 class ControllerResponsesExtensionPayFast extends AController
 {
     public $data = array();
@@ -43,6 +47,26 @@ class ControllerResponsesExtensionPayFast extends AController
             $cancel_url = $this->html->getSecureURL( 'checkout/guest_step_2' );
         }
 
+        //checks to see whether the default sandbox credentials should be used or not
+        if ( !$this->config->get( 'payfast_test' ) )
+        {
+            $this->data['merchant_id'] = $this->config->get ('payfast_merchant_id' );
+            $this->data['merchant_key'] = $this->config->get ('payfast_merchant_key' );
+        }
+        else
+        {
+            if ( empty( $this->config->get ( 'payfast_merchant_id' ) ) || empty( $this->config->get ( 'payfast_merchant_key' ) ) )
+            {
+                $this->data['merchant_id'] = SANDBOX_MERCHANT_ID;
+                $this->data['merchant_key'] = SANDBOX_MERCHANT_KEY;
+                $defaultSandboxCredentials = true;
+            }
+            else
+            {
+                $this->data['merchant_id'] = $this->config->get ('payfast_merchant_id' );
+                $this->data['merchant_key'] = $this->config->get ('payfast_merchant_key' );
+            }
+        }
         $this->data['merchant_id'] = $this->config->get ('payfast_merchant_id' );
         $this->data['merchant_key'] = $this->config->get ('payfast_merchant_key' );
         $this->data['return_url'] = $this->html->getSecureURL( 'checkout/success' );
@@ -64,7 +88,7 @@ class ControllerResponsesExtensionPayFast extends AController
 
         $passPhrase = $this->config->get ('payfast_passphrase' );
 
-        if ( empty( $passPhrase ) )
+        if ( empty( $passPhrase ) || $defaultSandboxCredentials )
         {
             $pfOutput = substr( $pfOutput, 0, -1 );
         }
