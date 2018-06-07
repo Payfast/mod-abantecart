@@ -9,16 +9,17 @@ if ( !defined ( 'DIR_CORE' ) )
     header ( 'Location: static_pages/' );
 }
 
-define('SANDBOX_MERCHANT_ID', '10000100');
-define('SANDBOX_MERCHANT_KEY', '46f0cd694581a');
+define( 'SANDBOX_MERCHANT_ID' , '10000100' );
+define( 'SANDBOX_MERCHANT_KEY' , '46f0cd694581a' );
 $defaultSandboxCredentials = false;
 
 class ControllerResponsesExtensionPayFast extends AController
 {
     public $data = array();
-    public function main() {
-        $this->data['button_confirm'] = $this->language->get('button_confirm');
-        $this->data['button_back'] = $this->language->get('button_back');
+    public function main() 
+    {
+        $this->data['button_confirm'] = $this->language->get( 'button_confirm' );
+        $this->data['button_back'] = $this->language->get( 'button_back' );
 
         if ( !$this->config->get( 'payfast_test' ) )
         {
@@ -50,12 +51,12 @@ class ControllerResponsesExtensionPayFast extends AController
         //checks to see whether the default sandbox credentials should be used or not
         if ( !$this->config->get( 'payfast_test' ) )
         {
-            $this->data['merchant_id'] = $this->config->get ('payfast_merchant_id' );
-            $this->data['merchant_key'] = $this->config->get ('payfast_merchant_key' );
+            $this->data['merchant_id'] = $this->config->get( 'payfast_merchant_id' );
+            $this->data['merchant_key'] = $this->config->get( 'payfast_merchant_key' );
         }
         else
         {
-            if ( empty( $this->config->get ( 'payfast_merchant_id' ) ) || empty( $this->config->get ( 'payfast_merchant_key' ) ) )
+            if ( empty( $this->config->get( 'payfast_merchant_id' ) ) || empty( $this->config->get( 'payfast_merchant_key' ) ) )
             {
                 $this->data['merchant_id'] = SANDBOX_MERCHANT_ID;
                 $this->data['merchant_key'] = SANDBOX_MERCHANT_KEY;
@@ -63,19 +64,19 @@ class ControllerResponsesExtensionPayFast extends AController
             }
             else
             {
-                $this->data['merchant_id'] = $this->config->get ('payfast_merchant_id' );
-                $this->data['merchant_key'] = $this->config->get ('payfast_merchant_key' );
+                $this->data['merchant_id'] = $this->config->get( 'payfast_merchant_id' );
+                $this->data['merchant_key'] = $this->config->get( 'payfast_merchant_key' );
             }
         }
         $this->data['return_url'] = $this->html->getSecureURL( 'checkout/success' );
         $this->data['cancel_url'] = $cancel_url;
         $this->data['notify_url'] = $this->html->getURL( 'extension/payfast/callback' );
-        $this->data['name_first'] = html_entity_decode($order_info['payment_firstname'], ENT_QUOTES, 'UTF-8');
-        $this->data['name_last'] = html_entity_decode($order_info['payment_lastname'], ENT_QUOTES, 'UTF-8');
+        $this->data['name_first'] = html_entity_decode($order_info['payment_firstname'], ENT_QUOTES, 'UTF-8' );
+        $this->data['name_last'] = html_entity_decode($order_info['payment_lastname'], ENT_QUOTES, 'UTF-8' );
         $this->data['email_address'] = $order_info['email'];
         $this->data['m_payment_id'] = $this->session->data['order_id'];
         $this->data['amount'] = $this->currency->format( $order_info['total'], $order_info['currency'], $order_info['value'], FALSE );
-        $this->data['item_name'] = html_entity_decode($this->config->get('store_name'), ENT_QUOTES, 'UTF-8');
+        $this->data['item_name'] = html_entity_decode($this->config->get( 'store_name' ), ENT_QUOTES, 'UTF-8' );
 
         $pfOutput = '';
         // Create output string
@@ -84,7 +85,7 @@ class ControllerResponsesExtensionPayFast extends AController
             $pfOutput .= $key . '=' . urlencode( trim( $value ) ) . '&';
         }
 
-        $passPhrase = $this->config->get ('payfast_passphrase' );
+        $passPhrase = $this->config->get( 'payfast_passphrase' );
 
         if ( empty( $passPhrase ) || $defaultSandboxCredentials )
         {
@@ -102,15 +103,15 @@ class ControllerResponsesExtensionPayFast extends AController
         $this->data['signature'] = md5( $hashed );
         $this->data['user_agent'] = 'AbanteCart 1.2';
 
-        if ( has_value( $this->config->get ('payfast_logo' ) ) )
+        if ( has_value( $this->config->get( 'payfast_logo' ) ) )
         {
-            if ( strpos( $this->config->get( 'payfast_logo'), 'http' ) === 0 )
+            if ( strpos( $this->config->get( 'payfast_logo' ), 'http' ) === 0 )
             {
                 $this->data['logoimg'] = $this->config->get( 'payfast_logo' );
             }
             else
             {
-                $this->data['logoimg'] = HTTPS_SERVER . 'resources/'.$this->config->get('payfast_logo');
+                $this->data['logoimg'] = HTTPS_SERVER . 'resources/'.$this->config->get( 'payfast_logo' );
             }
         }
 
@@ -144,7 +145,7 @@ class ControllerResponsesExtensionPayFast extends AController
             $this->data['products'][] = array(
                 'name'     => $product['name'],
                 'model'    => $product['model'],
-                'price'    => $this->currency->format($product['price'], $order_info['currency'], $order_info['value'], FALSE),
+                'price'    => $this->currency->format($product['price'], $order_info['currency'], $order_info['value'], FALSE ),
                 'quantity' => $product['quantity'],
                 'option'   => $option_data,
                 'weight'   => $product['weight']
@@ -171,7 +172,7 @@ class ControllerResponsesExtensionPayFast extends AController
                 $this->data['products'][] = array(
                     'name'     => $total['title'],
                     'model'    => '',
-                    'price'    => $this->currency->format($total['value'], $order_info['currency'], $order_info['value'], FALSE),
+                    'price'    => $this->currency->format($total['value'], $order_info['currency'], $order_info['value'], FALSE ),
                     'quantity' => 1,
                     'option'   => array(),
                     'weight'   => 0
@@ -214,20 +215,20 @@ class ControllerResponsesExtensionPayFast extends AController
 
         $back = $this->request->get[ 'rt' ] != 'checkout/guest_step_3'
             ? $this->html->getSecureURL( 'checkout/payment' )
-            : $this->html->getSecureURL( 'checkout/guest_step_2 ');
+            : $this->html->getSecureURL( 'checkout/guest_step_2' );
         $this->data[ 'back' ] = HtmlElementFactory::create( array( 'type' => 'button',
             'name' => 'back',
-            'text' => $this->language->get('button_back'),
+            'text' => $this->language->get( 'button_back' ),
             'style' => 'button',
-            'href' => $back ));
+            'href' => $back ) );
         $this->data[ 'button_confirm' ] = HtmlElementFactory::create(
             array( 'type' => 'submit',
-                'name' => $this->language->get('button_confirm'),
+                'name' => $this->language->get( 'button_confirm' ),
                 'style' => 'button',
             ) );
 
         $this->view->batchAssign( $this->data );
-        $this->processTemplate('responses/payfast.tpl');
+        $this->processTemplate( 'responses/payfast.tpl' );
     }
 
     public function callback()
@@ -283,7 +284,7 @@ class ControllerResponsesExtensionPayFast extends AController
         {
             pflog( 'Verify security signature' );
 
-            $passPhrase = $this->config->get ('payfast_passphrase' );;
+            $passPhrase = $this->config->get( 'payfast_passphrase' );;
             $pfPassPhrase = empty( $passPhrase ) ? null : $passPhrase;
 
             // If signature different, log for debugging
@@ -336,9 +337,9 @@ class ControllerResponsesExtensionPayFast extends AController
 
         if ( !$pfError && !$pfDone )
         {
-            pflog('Check Status and Update Order');
+            pflog( 'Check Status and Update Order' );
 
-            if ($pfData['payment_status'] == 'COMPLETE')
+            if ( $pfData['payment_status'] == 'COMPLETE' )
             {
                 $this->model_checkout_order->confirm($pfData['m_payment_id'], $this->config->get( 'payfast_order_status_id' ) );
             }
