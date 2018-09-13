@@ -149,7 +149,7 @@ function pfValidSignature( $pfData = null, &$pfParamString = null, $pfPassphrase
 
     $pfParamString = substr( $pfParamString, 0, -1 );
 
-    if( is_null( $pfPassphrase ) ||  ADDONS_PAYMENT_PAYFAST_TEST_MODE == 1 )
+    if( is_null( $pfPassphrase ) )
     {
         $tempParamString = $pfParamString;
     }

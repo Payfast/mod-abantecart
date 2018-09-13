@@ -10,11 +10,6 @@ if ( !defined ( 'DIR_CORE' ) )
     header ( 'Location: static_pages/' );
 }
 
-if( !class_exists( 'ExtensionDefaultPayFast') )
-{
-    include_once('core/payfast.php');
-}
-
 $controllers = array(
     'storefront' => array(
         'pages/extension/payfast',

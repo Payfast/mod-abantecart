@@ -65,7 +65,6 @@ Except as expressly indicated in this licence, you may not use, copy, modify or 
             <default_value>true</default_value>
         </item>
     </settings>
-    <custom_settings_template>pages/extension/payfast_settings.tpl</custom_settings_template>
     <help_file><![CDATA[help.txt]]></help_file>
     <preview>
         <item>payfast.png</item>
