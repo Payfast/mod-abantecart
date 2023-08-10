@@ -17,3 +17,5 @@ INTEGRATION
 10. When ready to go live navigate to the PayFast setup page as before, input your PayFast merchant ID and Key (and passphrase if set on your account). 11. Set 'Sandbox Mode' to 'No' and click 'Save'. 
 12. You are now ready to process live transactions using PayFast.
 13. Note: you will need to setup ZAR on the site in order to use PayFast.
+
+Please [click here](https://payfast.io/integration/shopping-carts/abantecart/) for more information concerning this module.
