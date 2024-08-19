@@ -7,7 +7,7 @@ to [contact the Payfast support team](https://payfast.io/contact/) should you re
 
 ## Installation
 
-1. Download **payfast.tar.gz**, or compress the **payfast** folder using the tar.gz format.
+1. Download [**payfast.tar.gz**](https://github.com/Payfast/mod-abantecart/releases/download/v1.1.0/payfast.tar.gz), or compress the **payfast** folder using the tar.gz format.
 2. Navigate to to **Admin** > **Extensions** > **Install Extension**.
 3. Click on **Extension Upload** tab.
 4. Click on **Browse** button and select **payfast.tar.gz**, then click the **Continue** button.
