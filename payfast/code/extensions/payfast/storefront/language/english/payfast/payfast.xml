@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) 2024 Payfast (Pty) Ltd -->
+<definitions>
+    <definition>
+        <key>text_title</key>
+        <value><![CDATA[Payfast]]></value>
+    </definition>
+    <definition>
+        <key>button_back</key>
+        <value><![CDATA[Back]]></value>
+    </definition>
+    <definition>
+        <key>button_confirm</key>
+        <value><![CDATA[Confirm Order]]></value>
+    </definition>
+    <definition>
+        <key>text_payfast_error</key>
+        <value><![CDATA[Payfast Error]]></value>
+    </definition>
+    <definition>
+        <key>service_error</key>
+        <value><![CDATA[Error has occured during request. Please try again later.]]></value>
+    </definition>
+    <definition>
+        <key>text_learn_more</key>
+        <value><![CDATA[Learn more]]></value>
+    </definition>
+    <definition>
+        <key>text_discount</key>
+        <value><![CDATA[Discount]]></value>
+    </definition>
+    <definition>
+        <key>text_order_total_amount</key>
+        <value><![CDATA[Order total amount]]></value>
+    </definition>
+</definitions>
