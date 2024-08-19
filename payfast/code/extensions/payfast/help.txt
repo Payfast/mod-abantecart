@@ -1,0 +1,18 @@
+<b>Payfast Configuration Manual</b>
+<br/><br/>
+This is extension provides integration to Payfast service. If you do not have Payfast account yet, <a href="https://www.payfast.co.za" target="_new">register here</a>
+<br/>
+This manual provides instructions how to enable Payfast with all settings provided.
+
+<br/><br/>
+Extension provides 2 main modes Test and Live. To enable live mode set Sandbox (Test) Mode to NO.
+
+<br/><br/>
+Now you can provide the rest of the settings. Other settings are self explanatory.
+
+
+<br/><br/>
+
+What to look for?
+<br/><br/>
+ Customers on a storefront will see option to checkout at shopping cart page, bypassing normal checkout process <br />
